@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anh Thu Do</title>
+  <meta name="description" content="Personal website and portfolio of Anh Thu Do." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Anh Thu Do</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <h1>Hi, I'm <span class="accent">Anh Thu</span>.</h1>
+        <p class="hero-subtitle">Placeholder tagline &mdash; e.g. "Computer Science student building things at the intersection of X and Y."</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <p>
+          Placeholder bio. Write a few sentences about who you are, what you study or do,
+          and what you're interested in. Mention your school, major, and any focus areas
+          (e.g. machine learning, web development, design).
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Project One</h3>
+          <p>Short description of the project, what it does, and what problem it solves.</p>
+          <p class="project-tags">React &middot; Node.js &middot; PostgreSQL</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <h3>Project Two</h3>
+          <p>Short description of the project, what it does, and what problem it solves.</p>
+          <p class="project-tags">Python &middot; Pandas &middot; Machine Learning</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <h3>Project Three</h3>
+          <p>Short description of the project, what it does, and what problem it solves.</p>
+          <p class="project-tags">HTML &middot; CSS &middot; JavaScript</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>HTML &amp; CSS</li>
+        <li>React</li>
+        <li>SQL</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <p>The best way to reach me is by email or through the links below.</p>
+      <div class="contact-links">
+        <a href="mailto:athudo@g.ucla.edu">athudo@g.ucla.edu</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Anh Thu Do. Built with HTML &amp; CSS.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
