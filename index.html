@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anh Thu Do</title>
-  <meta name="description" content="Personal website and portfolio of Anh Thu Do." />
+  <meta name="description" content="Personal website and portfolio of Anh Thu Do — Mathematics of Computation student at UCLA." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -14,8 +14,10 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#involvement">Involvement</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -29,7 +31,7 @@
     <section id="hero" class="hero">
       <div class="hero-inner">
         <h1>Hi, I'm <span class="accent">Anh Thu</span>.</h1>
-        <p class="hero-subtitle">Placeholder tagline &mdash; e.g. "Computer Science student building things at the intersection of X and Y."</p>
+        <p class="hero-subtitle">Mathematics of Computation student at UCLA building full-stack apps and AI-powered tools.</p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -41,10 +43,69 @@
       <h2 class="section-title">About</h2>
       <div class="about-content">
         <p>
-          Placeholder bio. Write a few sentences about who you are, what you study or do,
-          and what you're interested in. Mention your school, major, and any focus areas
-          (e.g. machine learning, web development, design).
+          I'm a student at UCLA majoring in Mathematics of Computation with a minor in Data Science
+          Engineering (GPA 3.9, expected June 2027). I build full-stack web and mobile applications and
+          have a growing focus on AI — from RAG pipelines to LLM research. I've shipped UI for
+          products used in production settings, from an internal incident-analysis tool at Capital One
+          to nonprofit software with LA Blueprint. Outside of school and work, I've founded and led
+          student organizations at UCLA for four years running.
         </p>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Software Engineering Intern &middot; Capital One</h3>
+            <span class="timeline-date">June 2026 – August 2026</span>
+          </div>
+          <ul>
+            <li>Designed and built the full UI (web app, Slack bot, and Chrome extension) for a Generative AI-powered Retrieval-Augmented Generation (RAG) tool used for incident root-cause analysis, serving as the primary UI owner across all three platforms.</li>
+            <li>Integrated multiple observability and monitoring APIs to unify data into a single interface, accelerating root-cause analysis by 50% and reducing on-call fatigue.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Full-stack Developer &middot; PATH</h3>
+            <span class="timeline-date">Nov 2025 – June 2026</span>
+          </div>
+          <ul>
+            <li>Developed a full-stack web application to streamline resource management systems, including resource request workflows and inventory, role and ticket management, using TypeScript, Next.js, Supabase (PostgreSQL), and Amazon S3.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Full-stack Developer Intern &middot; Cosnetix</h3>
+            <span class="timeline-date">Jan 2026 – May 2026</span>
+          </div>
+          <ul>
+            <li>Designed and implemented the UI flow for a barcode scanner feature in a React Native app, building an efficient database lookup pipeline to retrieve and display item information immediately after each scan.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Undergraduate Research Assistant &middot; StarAI Lab</h3>
+            <span class="timeline-date">Nov 2025 – June 2026</span>
+          </div>
+          <ul>
+            <li>Conducted research on large language models (LLMs) with a focus on speculative decoding.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Course Reader &middot; UCLA Mathematics Department</h3>
+            <span class="timeline-date">Oct 2024 – June 2025</span>
+          </div>
+          <ul>
+            <li>Graded linear algebra and C++ assignments under the guidance of course instructors.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -52,30 +113,19 @@
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
         <article class="project-card">
-          <h3>Project One</h3>
-          <p>Short description of the project, what it does, and what problem it solves.</p>
-          <p class="project-tags">React &middot; Node.js &middot; PostgreSQL</p>
+          <h3>Dango</h3>
+          <p>Full-stack social media platform for sharing global restaurant itineraries. Responsive UI supporting post creation, location-based itinerary search, social interactions (like/save/follow), and dynamic post and profile pages.</p>
+          <p class="project-tags">React &middot; TypeScript &middot; Firebase</p>
           <div class="project-links">
-            <a href="#">Live Demo</a>
-            <a href="#">Source Code</a>
+            <a href="https://dangoapp.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
           </div>
         </article>
         <article class="project-card">
-          <h3>Project Two</h3>
-          <p>Short description of the project, what it does, and what problem it solves.</p>
-          <p class="project-tags">Python &middot; Pandas &middot; Machine Learning</p>
+          <h3>Glow</h3>
+          <p>Full-stack e-commerce website for cosmetics. UI flows for product search/favorites, shopping cart management, and dynamic product page routing, with authentication for a personalized shopping experience.</p>
+          <p class="project-tags">React &middot; TypeScript &middot; Firebase</p>
           <div class="project-links">
-            <a href="#">Live Demo</a>
-            <a href="#">Source Code</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <h3>Project Three</h3>
-          <p>Short description of the project, what it does, and what problem it solves.</p>
-          <p class="project-tags">HTML &middot; CSS &middot; JavaScript</p>
-          <div class="project-links">
-            <a href="#">Live Demo</a>
-            <a href="#">Source Code</a>
+            <a href="https://glowcos.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
           </div>
         </article>
       </div>
@@ -83,14 +133,104 @@
 
     <section id="skills" class="section">
       <h2 class="section-title">Skills</h2>
-      <ul class="skills-list">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>HTML &amp; CSS</li>
-        <li>React</li>
-        <li>SQL</li>
-        <li>Git</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h4>Frontend</h4>
+          <ul class="skills-list">
+            <li>ReactJS</li>
+            <li>React Native</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Backend</h4>
+          <ul class="skills-list">
+            <li>NodeJS</li>
+            <li>Supabase</li>
+            <li>Firebase</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Developer Tools</h4>
+          <ul class="skills-list">
+            <li>Claude Code</li>
+            <li>Git/GitHub</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>AI</h4>
+          <ul class="skills-list">
+            <li>LLMs</li>
+            <li>RAG</li>
+            <li>ChromaDB</li>
+            <li>Prompt Engineering</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Languages</h4>
+          <ul class="skills-list">
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+            <li>R</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="involvement" class="section">
+      <h2 class="section-title">Involvement</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Full-stack Developer &middot; LA Blueprint</h3>
+            <span class="timeline-date">Oct 2025 – Present</span>
+          </div>
+          <ul>
+            <li>Developing full-stack web and mobile applications for nonprofit organizations.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Software Engineer &middot; ACM-W Tech Fellowship</h3>
+            <span class="timeline-date">Jan 2025 – May 2025</span>
+          </div>
+          <ul>
+            <li>Developed a full-stack mobile app MVP with React Native and Firebase to provide easier access to clubs.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Event Planning Intern &middot; KINSA (K-pop International Student Association)</h3>
+            <span class="timeline-date">Nov 2023 – May 2024</span>
+          </div>
+          <ul>
+            <li>Coordinated meeting activities and assisted in coordinating K-Factor, the annual dance showcase.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>President &amp; Founding Member &middot; Vietnamese Culture Club</h3>
+            <span class="timeline-date">August 2019 – May 2023</span>
+          </div>
+          <ul>
+            <li>Founded and directed events and cultural dance performances for 4 consecutive years.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>President &middot; K-pop Club</h3>
+            <span class="timeline-date">August 2019 – May 2023</span>
+          </div>
+          <ul>
+            <li>Developed and directed club events and activities to foster a supportive and safe space.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section id="contact" class="section">
@@ -98,8 +238,8 @@
       <p>The best way to reach me is by email or through the links below.</p>
       <div class="contact-links">
         <a href="mailto:athudo@g.ucla.edu">athudo@g.ucla.edu</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="http://www.linkedin.com/in/anh-thu-do-atd" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/minado05" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
