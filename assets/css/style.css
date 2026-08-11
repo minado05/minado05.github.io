@@ -497,6 +497,277 @@ a:hover {
   filter: drop-shadow(0 2px 2px rgba(74, 50, 34, 0.3));
 }
 
+/* Garden page */
+.garden-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.garden-page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.1rem;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.8px rgba(74, 50, 34, 0.35);
+}
+
+.title-icon-emoji {
+  -webkit-text-stroke: 0;
+  margin-right: 0.5rem;
+}
+
+.garden-page-intro {
+  color: var(--text-muted);
+  margin: 0 auto 2rem;
+  max-width: 500px;
+}
+
+.garden-page-back {
+  margin-top: 1.5rem;
+}
+
+.garden-scene {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 440px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--wood);
+  box-shadow: 0 8px 24px rgba(90, 60, 30, 0.25);
+}
+
+.garden-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 210px;
+  background: linear-gradient(180deg, #bdeaff 0%, #dff3ff 100%);
+  overflow: hidden;
+}
+
+.g-cloud {
+  position: absolute;
+  background: #fff;
+  opacity: 0.85;
+  border-radius: 40px;
+  animation: cloud-drift 20s ease-in-out infinite alternate;
+}
+
+.g-cloud-1 {
+  width: 70px;
+  height: 26px;
+  top: 20px;
+  left: 8%;
+}
+
+.g-cloud-2 {
+  width: 50px;
+  height: 20px;
+  top: 70px;
+  left: 55%;
+  animation-duration: 26s;
+}
+
+.g-cloud-3 {
+  width: 90px;
+  height: 30px;
+  top: 12px;
+  left: 75%;
+  animation-duration: 32s;
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40px);
+  }
+}
+
+.garden-ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 190px;
+  background-image: url("../img/garden/grass_tile.png");
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  box-shadow: inset 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.g-obj {
+  position: absolute;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 3px rgba(74, 50, 34, 0.3));
+}
+
+.g-house-1 {
+  width: 76px;
+  height: 76px;
+  left: 6%;
+  bottom: 26px;
+}
+
+.g-house-2 {
+  width: 62px;
+  height: 62px;
+  left: 34%;
+  bottom: 20px;
+}
+
+.g-house-3 {
+  width: 70px;
+  height: 70px;
+  left: 66%;
+  bottom: 30px;
+}
+
+.g-chest {
+  width: 30px;
+  height: 30px;
+  left: 54%;
+  bottom: 14px;
+}
+
+.g-frog {
+  width: 26px;
+  height: 26px;
+  left: 47%;
+  bottom: 6px;
+}
+
+.g-plant-1 {
+  width: 36px;
+  height: 36px;
+  left: 16%;
+  bottom: 8px;
+}
+
+.g-plant-2 {
+  width: 32px;
+  height: 32px;
+  left: 26%;
+  bottom: 6px;
+}
+
+.g-plant-3 {
+  width: 38px;
+  height: 38px;
+  left: 44%;
+  bottom: 10px;
+}
+
+.g-plant-4 {
+  width: 32px;
+  height: 32px;
+  left: 58%;
+  bottom: 6px;
+}
+
+.g-plant-5 {
+  width: 32px;
+  height: 32px;
+  left: 80%;
+  bottom: 8px;
+}
+
+.g-plant-6 {
+  width: 30px;
+  height: 30px;
+  left: 22%;
+  bottom: 26px;
+}
+
+.g-plant-7 {
+  width: 36px;
+  height: 36px;
+  left: 90%;
+  bottom: 10px;
+}
+
+.g-plant-8 {
+  width: 34px;
+  height: 34px;
+  left: 3%;
+  bottom: 6px;
+}
+
+.g-bee {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/garden/bee-spritesheet.png");
+  background-size: 288px 36px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  animation: garden-bee-fly 0.7s steps(8) infinite;
+}
+
+@keyframes garden-bee-fly {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -288px 0;
+  }
+}
+
+.g-bee-1 {
+  top: 60px;
+  left: 15%;
+  animation: garden-bee-fly 0.7s steps(8) infinite, bee-path-1 9s ease-in-out infinite;
+}
+
+.g-bee-2 {
+  top: 110px;
+  left: 60%;
+  animation: garden-bee-fly 0.7s steps(8) infinite, bee-path-2 11s ease-in-out infinite;
+}
+
+@keyframes bee-path-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(40px, -20px);
+  }
+  50% {
+    transform: translate(80px, 10px);
+  }
+  75% {
+    transform: translate(30px, 25px);
+  }
+}
+
+@keyframes bee-path-2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(-30px, 15px);
+  }
+  60% {
+    transform: translate(-60px, -15px);
+  }
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .nav-links {
@@ -546,5 +817,23 @@ a:hover {
 
   .footer-garden {
     gap: 0.6rem;
+  }
+
+  .garden-scene {
+    height: 320px;
+  }
+
+  .garden-sky {
+    height: 140px;
+  }
+
+  .garden-ground {
+    top: 130px;
+  }
+
+  .g-cloud-2,
+  .g-cloud-3,
+  .g-bee-2 {
+    display: none;
   }
 }
