@@ -1,12 +1,21 @@
 :root {
-  --bg: #eef1f5;
-  --bg-alt: #e3e8ee;
+  /* Graphite palette */
+  --graphite-gray: #c1c0c2;
+  --graphite-cream: #f5e9e7;
+  --graphite-pink: #ecc5c6;
+  --graphite-olive: #837d68;
+  --graphite-blue: #8a9db1;
+
+  --bg: #eef1f4;
+  --bg-alt: #e2e7ec;
   --panel-bg: #ffffff;
-  --text: #263140;
-  --text-muted: #5b6b7c;
-  --accent: #3f5a73;
-  --accent-2: #6b8caf;
-  --border: #cdd6e0;
+  --text: #2f3236;
+  --text-muted: #6c6f74;
+  --accent: #5c7186;
+  --accent-soft: var(--graphite-blue);
+  --accent-pink: var(--graphite-pink);
+  --accent-olive: var(--graphite-olive);
+  --border: #cfd3d8;
   --max-width: 960px;
   --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -41,8 +50,8 @@ a:hover {
 .nav {
   position: sticky;
   top: 0;
-  background: var(--panel-bg);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--graphite-gray);
   z-index: 10;
 }
 
@@ -76,6 +85,7 @@ a:hover {
 
 .nav-links a:hover {
   color: var(--accent);
+  text-decoration: none;
 }
 
 .nav-toggle {
@@ -146,7 +156,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background: #33495e;
+  background: #48596b;
 }
 
 .btn-secondary {
@@ -171,7 +181,7 @@ a:hover {
   font-weight: 700;
   font-size: 1.6rem;
   margin: 0 0 1.5rem;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .about-content p {
@@ -234,9 +244,13 @@ a:hover {
 }
 
 .project-tags {
-  font-size: 0.85rem;
-  color: var(--accent-2);
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text);
   font-weight: 600;
+  background: var(--accent-pink);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
 }
 
 .project-links {
@@ -276,7 +290,7 @@ a:hover {
 .timeline-stack {
   margin: 0 0 0.5rem;
   font-size: 0.85rem;
-  color: var(--accent-2);
+  color: var(--accent-olive);
   font-weight: 600;
 }
 
@@ -333,22 +347,33 @@ a:hover {
 /* Contact */
 .contact-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
   margin-top: 1rem;
-  font-weight: 500;
 }
 
-.contact-links a {
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
   background: var(--panel-bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.5rem 1.1rem;
+  color: var(--accent);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.contact-links a:hover {
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-icon:hover {
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--accent);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -368,8 +393,8 @@ a:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--panel-bg);
-    border-bottom: 1px solid var(--border);
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--graphite-gray);
     flex-direction: column;
     padding: 1rem 1.5rem;
     display: none;
