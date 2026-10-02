@@ -110,10 +110,12 @@ const CARD_CONTENT = [
       {
         heading: "Dango",
         body: "Social media app for sharing restaurant itineraries fueled by my passion for good eats",
+        image: "assets/img/cards/projects/web/dango.jpg",
       },
       {
         heading: "Glow",
         body: "Ecommerce store for cosmetics motivated by my love for cosmetics and self-expression through makeup.",
+        image: "assets/img/cards/projects/web/glow.jpg",
       },
     ],
   },
