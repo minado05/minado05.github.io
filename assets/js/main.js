@@ -226,8 +226,19 @@ function renderSlide() {
   const slide = slides[slideIndex];
   slideTitle.textContent = slide.heading;
   slideBody.textContent = slide.body;
+  if (slide.link) {
+    const link = document.createElement("a");
+    link.className = "slide-link";
+    link.href = slide.link.href;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.innerHTML = `<span></span> <span aria-hidden="true">&rarr;</span>`;
+    link.firstChild.textContent = slide.link.text;
+    slideBody.append(document.createElement("br"), link);
+  }
   slideMedia.classList.toggle("has-image", Boolean(slide.image));
   slideMedia.classList.toggle("has-gallery", Boolean(slide.gallery));
+  slideMedia.classList.toggle("fit-contain", slide.fit === "contain");
   if (slide.gallery) {
     slideMedia.innerHTML = galleryMarkup(slide.gallery);
   } else {
