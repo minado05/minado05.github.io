@@ -1,21 +1,26 @@
 :root {
-  /* Graphite palette */
-  --graphite-gray: #c1c0c2;
-  --graphite-cream: #f5e9e7;
-  --graphite-pink: #ecc5c6;
-  --graphite-olive: #837d68;
-  --graphite-blue: #8a9db1;
+  /* Rose palette */
+  --rose-900: #d20a2e;
+  --rose-800: #ee0b34;
+  --rose-700: #f42248;
+  --rose-600: #f63e5f;
+  --rose-500: #f75a77;
+  --rose-400: #f8768e;
+  --rose-300: #fa92a5;
+  --rose-200: #fbafbc;
 
-  --bg: #eef1f4;
-  --bg-alt: #e2e7ec;
-  --panel-bg: #ffffff;
-  --text: #2f3236;
-  --text-muted: #6c6f74;
-  --accent: #5c7186;
-  --accent-soft: var(--graphite-blue);
-  --accent-pink: var(--graphite-pink);
-  --accent-olive: var(--graphite-olive);
-  --border: #cfd3d8;
+  --bg: #a80825;
+  --bg-alt: #9a0822;
+  --panel-bg: #a00823;
+  --text: #ffffff;
+  --text-muted: #ffffff;
+  --accent: var(--rose-200);
+  --accent-hover: #fdd3db;
+  --accent-soft: var(--rose-300);
+  --accent-pink: #9a0822;
+  --accent-olive: var(--rose-200);
+  --border: rgba(255, 255, 255, 0.35);
+  --nav-border: rgba(255, 255, 255, 0.35);
   --max-width: 960px;
   --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -34,6 +39,16 @@ body {
   color: var(--text);
   line-height: 1.6;
   background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 a {
@@ -51,7 +66,7 @@ a:hover {
   position: sticky;
   top: 0;
   background: var(--bg-alt);
-  border-bottom: 1px solid var(--graphite-gray);
+  border-bottom: 1px solid var(--nav-border);
   z-index: 10;
 }
 
@@ -152,11 +167,11 @@ a:hover {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--bg);
 }
 
 .btn-primary:hover {
-  background: #48596b;
+  background: var(--accent-hover);
 }
 
 .btn-secondary {
@@ -173,8 +188,8 @@ a:hover {
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem;
-  border-top: 1px solid var(--border);
+  padding: 3rem 1.5rem 1rem;
+  width: 100%;
 }
 
 .section-title {
@@ -345,11 +360,34 @@ a:hover {
 }
 
 /* Contact */
+#contact {
+  max-width: none;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+
+#contact .section-title {
+  margin-bottom: 0.6rem;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.copyright {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .contact-links {
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .contact-icon {
@@ -373,17 +411,16 @@ a:hover {
 .contact-icon:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--bg);
   text-decoration: none;
 }
 
 /* Footer */
 .footer {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem;
   color: var(--text-muted);
   font-size: 0.9rem;
-  border-top: 1px solid var(--border);
 }
 
 /* Mobile */
@@ -394,7 +431,7 @@ a:hover {
     left: 0;
     right: 0;
     background: var(--bg-alt);
-    border-bottom: 1px solid var(--graphite-gray);
+    border-bottom: 1px solid var(--nav-border);
     flex-direction: column;
     padding: 1rem 1.5rem;
     display: none;
