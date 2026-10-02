@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -359,6 +363,456 @@ a:hover {
   color: var(--text);
 }
 
+/* Card table */
+.table {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 0;
+}
+
+body.dealing {
+  overflow: hidden;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.intro-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.btn-more {
+  font: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-more:hover {
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.btn-more-arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-more:hover .btn-more-arrow {
+  transform: translateX(4px);
+}
+
+.deck {
+  flex-shrink: 0;
+  --card-w: clamp(150px, 20vw, 220px);
+  position: relative;
+  width: var(--card-w);
+  aspect-ratio: 5 / 7;
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  will-change: transform;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 10px 28px rgba(40, 0, 8, 0.4);
+}
+
+.card-back {
+  background: #fff7f8;
+  padding: 8px;
+}
+
+.card-back::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 7px;
+  background-color: var(--rose-900);
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.16) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.16) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.16) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.16) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+.card-back::after {
+  content: "\2665";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.6em;
+  height: 2.6em;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff7f8;
+  color: var(--rose-900);
+  font-size: calc(var(--card-w) * 0.1);
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background: #fff7f8;
+  color: var(--rose-900);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.card-corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-size: calc(var(--card-w) * 0.13);
+  font-weight: 700;
+}
+
+.card-corner span + span {
+  font-size: 0.8em;
+}
+
+.card-corner.tl {
+  top: 0.55em;
+  left: 0.5em;
+}
+
+.card-corner.br {
+  bottom: 0.55em;
+  right: 0.5em;
+  transform: rotate(180deg);
+}
+
+.card-pip {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(var(--card-w) * 0.45);
+  line-height: 1;
+}
+
+.card-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18%;
+  text-align: center;
+  font-size: calc(var(--card-w) * 0.085);
+  letter-spacing: 0.04em;
+}
+
+/* Card picker */
+.picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.picker-prompt {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hand {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cards overlap slightly like a hand of cards; more on narrow screens so all seven fit. */
+.hand-card + .hand-card {
+  margin-left: calc(var(--card-w) * -0.12);
+}
+
+.hand-card {
+  --card-w: clamp(64px, 13vw, 140px);
+  position: relative;
+  width: var(--card-w);
+  aspect-ratio: 5 / 7;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  perspective: 1000px;
+  transform: translateY(calc(var(--drop) + var(--lift, 0px))) rotate(var(--rot));
+  transition: transform 0.25s ease;
+}
+
+.hand-card:hover,
+.hand-card:focus-visible {
+  --lift: -18px;
+  z-index: 1;
+}
+
+.hand-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+.card-face-rank {
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+.card-face-rank small {
+  display: block;
+  font-size: 0.45em;
+  text-align: center;
+}
+
+.btn-back {
+  font: inherit;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-back:hover {
+  color: var(--accent);
+}
+
+/* Slideshow */
+.slideshow {
+  width: 100%;
+  max-width: min(680px, calc(100% - 32px));
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.slideshow::backdrop {
+  background: rgba(40, 0, 8, 0.72);
+}
+
+.slideshow-panel {
+  position: relative;
+  padding: 1.75rem clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
+  border-radius: 16px;
+  background: #fff7f8;
+  color: #2b0a10;
+  box-shadow: 0 20px 50px rgba(40, 0, 8, 0.5);
+}
+
+.slideshow-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--rose-900);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.slideshow-close:hover {
+  background: var(--bg-alt);
+  color: #fff;
+}
+
+.slideshow-card {
+  margin: 0 0 0.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--rose-900);
+}
+
+.slide-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--rose-900);
+}
+
+.slide-media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  margin: 1rem 0;
+  border: 2px dashed var(--rose-200);
+  border-radius: 10px;
+  color: #9a4a57;
+  font-size: 0.9rem;
+}
+
+.slide-media.has-image {
+  border: none;
+}
+
+.slide-media.has-gallery {
+  display: block;
+  place-items: normal;
+  aspect-ratio: auto;
+  border: none;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 10px;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-track:focus-visible {
+  outline: 2px solid var(--rose-900);
+  outline-offset: 3px;
+}
+
+.slide-media .gallery-track img {
+  flex: 0 0 auto;
+  width: auto;
+  height: clamp(220px, 42vh, 340px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 247, 248, 0.92);
+  color: var(--rose-900);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(40, 0, 8, 0.25);
+}
+
+.gallery-arrow:hover {
+  background: var(--rose-900);
+  color: #fff;
+}
+
+.gallery-arrow.prev {
+  left: 8px;
+}
+
+.gallery-arrow.next {
+  right: 8px;
+}
+
+.slide-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide-body {
+  margin: 0;
+  color: #5e2a33;
+}
+
+.slideshow-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.slide-arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rose-200);
+  border-radius: 50%;
+  background: none;
+  color: var(--rose-900);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.slide-arrow:hover:not(:disabled) {
+  background: var(--rose-900);
+  border-color: var(--rose-900);
+  color: #fff;
+}
+
+.slide-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--rose-200);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.slide-dot.active {
+  width: 22px;
+  background: var(--rose-900);
+}
+
 /* Contact */
 #contact {
   max-width: none;
@@ -425,6 +879,15 @@ a:hover {
 
 /* Mobile */
 @media (max-width: 640px) {
+  .hand-card + .hand-card {
+    margin-left: calc(var(--card-w) * -0.32);
+  }
+
+  .stage {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .nav-links {
     position: absolute;
     top: 100%;
