@@ -98,7 +98,7 @@ const CARD_CONTENT = [
       },
       {
         heading: "Pottery",
-        body: "I've been enjoying pottery recently. I love the creativity and freedom of ceramics",
+        body: "I've been enjoying pottery recently. I love the creativity and freedom through ceramics",
         image: "assets/img/cards/pottery/web/pottery-01.jpg",
       },
     ],
@@ -114,7 +114,7 @@ const CARD_CONTENT = [
       },
       {
         heading: "Glow",
-        body: "Ecommerce store for cosmetics motivated by my love for cosmetics and self-expression through makeup.",
+        body: "E-commerce store for cosmetics motivated by my love for cosmetics.",
         image: "assets/img/cards/projects/web/glow.jpg",
       },
     ],
