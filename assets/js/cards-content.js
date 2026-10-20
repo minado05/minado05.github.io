@@ -98,7 +98,7 @@ const CARD_CONTENT = [
       },
       {
         heading: "Pottery",
-        body: "I've been enjoying pottery recently. I love the creativity and freedom through ceramics",
+        body: "I've been enjoying pottery recently",
         image: "assets/img/cards/pottery/web/pottery-01.jpg",
       },
     ],
